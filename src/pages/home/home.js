@@ -3,31 +3,27 @@ import { View, Text , Button} from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import * as homeActions from '../../actions/home';
 import Banner from './banner';
+import Recommend from './recommend';
 
 export class Home extends Component {
-
    config = {
        navigationBarTitleText: '网易严选'
   }
 
   state={}
 
-  componentWillMount () {}
   componentDidMount () {
-    const { getHome } = this.props;
+    const { getHome, getRecommend } = this.props;
     getHome();
+    getRecommend();
   } 
-  componentWillReceiveProps (nextProps,nextContext) {} 
-  componentWillUnmount () {} 
-  componentDidShow () {} 
-  componentDidHide () {} 
-  componentDidCatchError () {} 
-  componentDidNotFound () {} 
+
   render() {
     const { home } = this.props;
     return home.info ? (
       <View>
         <Banner list={home.info.focus}/>
+        {home.recommend.isFetch ? <Recommend list={home.recommend.list}/> : null}
       </View>
     ) : null;
   }

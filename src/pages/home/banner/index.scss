@@ -1,0 +1,26 @@
+/* 
+ * 仅可以使用类选择器
+ */
+.banner{
+  &-wrap {
+    height: 340px;
+  }
+
+  &-swiper {
+    height: 340px;
+
+    &-item {
+      height: 340px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      &-img {
+        width: 690px;
+        height: 340px;
+        border-radius: 8px;
+        overflow: hidden;
+      }  
+    }
+  }
+}

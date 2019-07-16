@@ -3,23 +3,12 @@ import { View, Text , Swiper, SwiperItem, Image } from '@tarojs/components';
 import './index.scss';
 
 export class Index extends Component {
-
-  state={}
-
-  componentWillMount () {}
-  componentDidMount () {} 
-  componentWillReceiveProps (nextProps,nextContext) {} 
-  componentWillUnmount () {} 
-  componentDidShow () {} 
-  componentDidHide () {} 
-  componentDidCatchError () {} 
-  componentDidNotFound () {} 
   render() {
     const { list } = this.props;
     return (
-      <View className="wrap">
+      <View className="banner-wrap">
         <Swiper
-            className="swiper"
+            className="banner-swiper"
             circular
             autoplay
             indicatorDots
@@ -28,10 +17,10 @@ export class Index extends Component {
            {list.map(item => (
             <SwiperItem
                 key={item.rank}
-                className="swiper-item"
+                className="banner-swiper-item"
             >
                 <Image
-                    className="swiper-item-img"
+                    className="banner-swiper-item-img"
                     src={item.img}
                 />
             </SwiperItem>  

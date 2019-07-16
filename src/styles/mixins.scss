@@ -1,0 +1,10 @@
+/**
+ * NOTE RN 无法通过 text-overflow 实现省略号，这些代码不能打包到 RN 中
+ */
+ @mixin text-ellipsis() {
+  /*postcss-pxtransform rn eject enable*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*postcss-pxtransform rn eject disable*/
+}

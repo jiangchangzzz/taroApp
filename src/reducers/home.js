@@ -1,7 +1,12 @@
-import { GET_HOME } from '../constants/ActionType';
+import { GET_HOME, GET_RECOMMEND } from '../constants/ActionType';
 
 const initialState = {
-    info: null
+    info: null,
+    recommend: {
+        list: [],
+        hasMore: true,
+        isFetch: false
+    }
 };
 
 export default function home(state = initialState, action){
@@ -11,6 +16,16 @@ export default function home(state = initialState, action){
                 ...state,
                 info: action.payload
             };
+
+        case GET_RECOMMEND:
+            return {
+                ...state,
+                recommend: {
+                    list: [...state.recommend.list, ...action.payload.rcmdItemList],
+                    hasMore: action.payload.hasMore,
+                    isFetch: true
+                }
+            }
 
         default:
             return state;

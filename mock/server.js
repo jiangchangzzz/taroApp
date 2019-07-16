@@ -14,5 +14,10 @@ router.get('/api/home', async (context) => {
     context.body = data;
 });
 
+router.get('/api/recommend', async (context) => {
+    const data = require('./data/recommend');
+    context.body = data;
+});
+
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(3000);

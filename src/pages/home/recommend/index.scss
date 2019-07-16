@@ -1,0 +1,45 @@
+@import '../../../styles//mixins.scss';
+
+.recommend {
+  &-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    width: 50%;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-content {
+    width: 330px;
+  }
+
+  &-production {
+    width: 330px;
+    height: 330px;
+  }
+
+  &-desc {
+    display: flex;
+    flex-direction: column;
+
+    &-name {
+      color: #000;
+      font-size: 28px;
+      line-height: 40px;
+      @include text-ellipsis;
+    }
+
+    &-price {
+      color: #ab2b2b;
+      font-size: 32px;
+      line-height: 48px;
+      @include text-ellipsis;
+    }
+  }
+}
