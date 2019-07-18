@@ -1,4 +1,4 @@
-import React, { Component } from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro'
 import { Text, View, Image, SwiperItem } from '@tarojs/components'
 import Title from '../title';
 import './index.scss';

@@ -75,14 +75,19 @@ class Index extends Component {
 
   componentDidHide () { }
 
+  add(){
+    this.props.add();
+  }
+
   render () {
+    const title = 'Hello, World';
     return (
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
+        <Button className='add_btn' onClick={this.add.bind(this)}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
         <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
+        <View><Text>{title}</Text></View>
       </View>
     )
   }
